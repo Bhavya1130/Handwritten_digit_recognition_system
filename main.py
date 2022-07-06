@@ -49,16 +49,16 @@ print('test loss: ', test_loss)
 predictions = model.predict([x_test]) 
 
 # Print out the number
-print('Enter a number(as index) between 0 to 9999 \n\nYou will get the number at that index as output\n')
+print('***You will get the number at that index as output*** \n\nEnter a number(as index) between 0 to 9999\n')
 n = int(input())
 if n>0 & n<10000 :
-  print("\nThe number at index ", format(n), " is: ")
+  print("\nThe number at index {} is: ".format(n))
   print(np.argmax(predictions[n])) 
 else:
   print('Enter number in the range')
   
   # Plot out the number
-print('Here is the image of the number at index: ', format(n))
+print('***Here is the image of the number at index: {}***\n\n ' .format(n))
 if n>0 & n<10000 :
   plt.imshow(x_test[n], cmap="gray") # Import the image
   plt.show() # Show the image
